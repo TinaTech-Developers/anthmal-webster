@@ -102,3 +102,120 @@ export default function FancyServices() {
     </section>
   );
 }
+
+
+
+"use client";
+
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+const elements = [
+  {
+    title: "Mission",
+    description:
+      "To deliver professional and practical financial solutions that empower our clients to make sound business decisions.",
+  },
+  {
+    title: "Vision",
+    description:
+      "To be the leading firm of Chartered Accountants recognized for trust, innovation, and excellence.",
+  },
+  {
+    title: "Our Team",
+    description:
+      "A dynamic group of dedicated experts committed to driving your financial success.",
+  },
+];
+
+export default function WhoWeAreRadial() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const radiusDesktop = 200;
+
+  return (
+    <section className="relative bg-white py-24 px-6 flex flex-col items-center overflow-hidden">
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-3xl sm:text-4xl font-bold text-[#B71C1C] text-center mb-4 md:mb-56 "
+      >
+        Who We Are
+      </motion.h2>
+
+      {/* Radial Layout (Desktop) */}
+      {!isMobile && (
+        <div className="relative w-full max-w-5xl flex justify-center items-center">
+          {/* Central Circle */}
+          <motion.div
+            className="relative w-56 md:w-64 h-56 md:h-64 rounded-full bg-[#B71C1C] flex items-center justify-center text-white shadow-2xl"
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center px-4">
+              Anthmal&nbsp;Webster
+            </h2>
+          </motion.div>
+
+          {/* Surrounding Circles (even spacing) */}
+          {elements.map((el, i) => {
+            const angle =
+              ((i - 1) * (2 * Math.PI)) / elements.length - Math.PI / 2;
+            const x = radiusDesktop * Math.cos(angle);
+            const y = radiusDesktop * Math.sin(angle);
+
+            return (
+              <motion.div
+                key={el.title}
+                className="absolute w-36 md:w-44 h-36 md:h-44 rounded-full bg-white border border-gray-100 shadow-xl flex flex-col items-center justify-center p-4 text-center hover:shadow-2xl hover:scale-105 transition-transform duration-300"
+                style={{
+                  top: `calc(49% + ${y}px - 72px)`,
+                  left: `calc(50% + ${x}px - 86px)`,
+                }}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: i * 0.2 }}
+              >
+                <h3 className="font-semibold text-[#B71C1C] text-base md:text-lg">
+                  {el.title}
+                </h3>
+                <p className="mt-1 text-gray-600 text-xs sm:text-sm">
+                  {el.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Mobile Stack */}
+      {isMobile && (
+        <div className="flex flex-col items-center mt-8 gap-6 w-full">
+          {elements.map((el) => (
+            <motion.div
+              key={el.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="w-72 sm:w-80 bg-white border border-gray-100 rounded-3xl shadow-lg flex flex-col items-center justify-center p-6 text-center"
+            >
+              <h3 className="font-semibold text-[#B71C1C] text-lg">
+                {el.title}
+              </h3>
+              <p className="mt-2 text-gray-700 text-sm">{el.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}
