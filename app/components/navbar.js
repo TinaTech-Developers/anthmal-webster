@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Linkedin, Menu, X } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -75,7 +76,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: navLinks.length * 0.1 }}
             >
-              <Linkedin size={22} />
+              <FaLinkedin size={22} />
             </motion.a>
           </div>
 
@@ -125,7 +126,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="text-[#B71C1C] hover:text-red-800 transition"
             >
-              <Linkedin size={24} />
+              <FaLinkedin size={24} />
             </a>
           </div>
         </motion.div>

@@ -4,21 +4,25 @@ import { motion } from "framer-motion";
 
 const elements = [
   {
+    value: "M",
     title: "Mission",
     description:
       "To deliver professional and practical financial solutions that empower our clients to make sound business decisions.",
   },
   {
+    value: "V",
     title: "Vision",
     description:
       "To be the leading firm of Chartered Accountants recognized for trust, innovation, and excellence.",
   },
   {
+    value: "T",
     title: "Our Team",
     description:
       "A dynamic group of dedicated experts committed to driving your financial success.",
   },
   {
+    value: "V",
     title: "Values",
     description: "Integrity • Professionalism • Collaboration • Excellence",
   },
@@ -28,15 +32,15 @@ export default function WhoWeAreTimeline() {
   return (
     <section className="bg-gradient-to-b from-white via-gray-50 to-white py-24 px-6 flex flex-col items-center relative overflow-hidden">
       {/* Decorative background shapes */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-[#B71C1C]/10 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#B71C1C]/5 rounded-full blur-3xl -z-10"></div>
+      {/* <div className="absolute top-0 left-0 w-72 h-72 bg-[#B71C1C]/10 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#B71C1C]/5 rounded-full blur-3xl -z-10"></div> */}
 
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-16 max-w-2xl"
+        className="text-center mb-16 max-w-5xl"
       >
         <div className="text-center">
           <h2 className="text-4xl sm:text-sm font-extrabold text-[#B71C1C] tracking-tight relative inline-block">
@@ -47,12 +51,18 @@ export default function WhoWeAreTimeline() {
           </h1>
         </div>
 
-        <p className="mt-6 text-gray-700 text-base sm:text-lg leading-relaxed">
-          At{" "}
+        <p className="mt-6 text-gray-700 text-base sm:text-lg leading-relaxed w-full">
           <span className="font-semibold text-[#B71C1C]">Anthmal Webster</span>,
-          we are driven by a passion for excellence, integrity, and innovation.
-          Our commitment is to empower clients with reliable financial solutions
-          and trusted advisory services that inspire growth and confidence.
+          has a rich history dating back to November 2019, founded on a shared
+          vision by its five partners to establish a global network of
+          independently owned and managed accountancy firms. With a steadfast
+          commitment to delivering exceptional client services, the firm
+          operates underpinned by its core values: Client Dedication, unwavering
+          Ethical Standards, uncompromising Quality Services, and a relentless
+          pursuit of Value Addition. Inspired by the trust and support of its
+          stakeholders, Anthmal Webster continually strives to elevate its
+          standards, pushing the boundaries of excellence in the accountancy
+          profession.
         </p>
       </motion.div>
 
@@ -86,7 +96,10 @@ export default function WhoWeAreTimeline() {
             </div>
 
             {/* Connector dot */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 bg-[#B71C1C] w-5 h-5 rounded-full border-4 border-white shadow-lg"></div>
+
+            <div className="absolute left-1/2 transform -translate-x-1/2 bg-[#B71C1C] text-white font-bold w-10 h-10 flex items-center justify-center rounded-full shadow-lg border-4 border-white">
+              {el.value}
+            </div>
           </motion.div>
         ))}
 
@@ -103,6 +116,41 @@ export default function WhoWeAreTimeline() {
           </p>
         </motion.div>
       </div>
+      {/* <section className="py-24 bg-white text-center">
+        <h2 className="text-4xl font-extrabold text-[#B71C1C] mb-8">
+          Our Services
+        </h2>
+        <p className="max-w-2xl mx-auto text-gray-700 mb-12">
+          We provide tailored financial and advisory solutions designed to help
+          your business grow sustainably.
+        </p>
+        <div className="grid md:grid-cols-3 gap-8 px-6">
+          {[
+            {
+              title: "Audit & Assurance",
+              desc: "Comprehensive audit services ensuring transparency and compliance.",
+            },
+            {
+              title: "Tax Consulting",
+              desc: "Expert guidance to optimize your tax strategies and minimize liabilities.",
+            },
+            {
+              title: "Business Advisory",
+              desc: "Practical insights and strategic advice to drive business success.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="p-8 bg-gray-50 rounded-2xl shadow hover:shadow-xl transition"
+            >
+              <h3 className="text-xl font-bold text-[#B71C1C] mb-3">
+                {item.title}
+              </h3>
+              <p className="text-gray-600">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section> */}
     </section>
   );
 }

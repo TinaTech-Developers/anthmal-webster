@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    src: "/hero1.jpg",
+    src: "/hero.jpg",
     alt: "Accounting team working",
     title: "Trusted Chartered Accountants",
     subtitle: "for Your Business Growth",
@@ -15,7 +15,7 @@ const slides = [
       "At Anthmal Webster, we provide expert financial advice, tax planning, and business solutions tailored to your needs.",
   },
   {
-    src: "/hero2.jpg",
+    src: "/person-working-html-computer.jpg",
     alt: "Financial planning",
     title: "Expert Financial Planning",
     subtitle: "for Every Business",
