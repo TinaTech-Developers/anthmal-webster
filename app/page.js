@@ -11,7 +11,7 @@ import WhyChooseUs from "./components/whychooseus";
 export default function Home() {
   return (
     <>
-      <Navbar />
+   
       <Hero />
       <WhoWeAre />
       <PromotionBanner />
