@@ -21,18 +21,19 @@ export default function AdminLogin() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
+
       const data = await res.json();
 
-      if (res.ok) {
-        localStorage.setItem("adminToken", data.token); // ✅ Store token
-        toast.success("Login successful!", { autoClose: 2000 });
-        setTimeout(() => router.push("/admin/settings"), 2000);
+      if (res.ok && data.token) {
+        localStorage.setItem("adminToken", data.token);
+        toast.success("Login successful!", { autoClose: 1500 });
+        setTimeout(() => router.replace("/admin/settings"), 1500);
       } else {
-        toast.error(data.error || "Login failed", { autoClose: 3000 });
+        toast.error(data.error || "Invalid credentials", { autoClose: 3000 });
       }
     } catch (err) {
-      console.error(err);
-      toast.error("Login failed", { autoClose: 3000 });
+      console.error("Login error:", err);
+      toast.error("Login failed — server unreachable", { autoClose: 3000 });
     }
   };
 
@@ -53,6 +54,7 @@ export default function AdminLogin() {
           className="w-full border border-gray-300 rounded-lg px-4 py-2"
           required
         />
+
         <input
           type="password"
           name="password"
@@ -62,6 +64,7 @@ export default function AdminLogin() {
           className="w-full border border-gray-300 rounded-lg px-4 py-2"
           required
         />
+
         <button
           type="submit"
           className="w-full bg-[#B71C1C] text-white py-2 rounded-lg font-semibold hover:bg-[#A01919] transition"
