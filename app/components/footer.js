@@ -46,27 +46,27 @@ export default function Footer() {
           <h3 className="text-xl font-semibold text-[#B71C1C]">Quick Links</h3>
           <ul className="space-y-2 text-gray-300">
             <li>
-              <a href="#" className="hover:text-[#B71C1C] transition">
+              <a href="/" className="hover:text-[#B71C1C] transition">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#B71C1C] transition">
+              <a href="services" className="hover:text-[#B71C1C] transition">
                 Services
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#B71C1C] transition">
+              <a href="about-us" className="hover:text-[#B71C1C] transition">
                 About Us
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#B71C1C] transition">
-                Blog
+              <a href="newsletter" className="hover:text-[#B71C1C] transition">
+                Newsletter
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#B71C1C] transition">
+              <a href="/contact" className="hover:text-[#B71C1C] transition">
                 Contact
               </a>
             </li>
@@ -78,22 +78,22 @@ export default function Footer() {
           <h3 className="text-xl font-semibold text-[#B71C1C]">Services</h3>
           <ul className="space-y-2 text-gray-300">
             <li>
-              <a href="#" className="hover:text-[#B71C1C] transition">
+              <a href="/services" className="hover:text-[#B71C1C] transition">
                 Accounting
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#B71C1C] transition">
+              <a href="/services" className="hover:text-[#B71C1C] transition">
                 Tax Planning
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#B71C1C] transition">
+              <a href="/services" className="hover:text-[#B71C1C] transition">
                 Financial Consulting
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#B71C1C] transition">
+              <a href="/services" className="hover:text-[#B71C1C] transition">
                 Business Solutions
               </a>
             </li>
@@ -106,8 +106,10 @@ export default function Footer() {
           <p className="text-gray-300">
             📍 123 Finance Street, Harare, Zimbabwe
           </p>
-          <p className="text-gray-300">📞 +263 71 247 1209</p>
-          <p className="text-gray-300">✉️ info@anthmalwebster.com</p>
+          <p className="text-gray-300">📞 +263 776 666 360</p>
+          <p className="text-gray-300">
+            ✉️ info@anthmalwebster.com | anthmalwebster@gmail.com
+          </p>
           <p className="text-gray-300">⏰ Mon-Fri: 8am - 5pm</p>
         </div>
       </div>

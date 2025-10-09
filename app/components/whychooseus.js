@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
             Why Choose <span className="text-[#B71C1C]">Anthmal Webster?</span>
           </h2>
-          <p className="text-gray-700 mb-8 leading-relaxed">
+          <p className="text-gray-700 mb-8 sm:text-lg leading-relaxed">
             Founded in <strong>November 2019</strong> by five visionary
             partners, Anthmal Webster was built to unite independently owned
             accountancy firms under one global network. Guided by integrity,

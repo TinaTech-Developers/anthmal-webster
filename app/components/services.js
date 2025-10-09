@@ -5,28 +5,39 @@ import Image from "next/image";
 
 const services = [
   {
-    title: "Accounting Services",
+    title: "Corporate Governance",
     description:
-      "Accurate bookkeeping, financial reporting, and compliance to keep your business on track.",
-    image: "/services1.jpg",
+      "Expert guidance on corporate governance matters and support with regulatory compliance under the COBE Act and NCCGZ.",
+    image:
+      "https://cdn.azeusconvene.com/wp-content/uploads/image1_Principles-of-Corporate-Governance.jpg",
+    related: [
+      "Audit & Assurance",
+      "Business Advisory",
+      "Payroll & HR Consulting",
+    ],
   },
   {
-    title: "Tax Planning",
+    title: "Financial Reporting",
     description:
-      "Strategic tax advice to minimize liabilities and maximize savings for your business.",
+      "Sustainability reporting, IFRS & IPSAS compliance, preparation of financial statements, and accounting systems advisory.",
+    image:
+      "https://quickbooks.intuit.com/oidam/intuit/sbseg/en_ca/blog/images/importance-financial-reports-photo-qbo-ca-desktop.jpeg",
+    related: [
+      "Accounting & Bookkeeping",
+      "Audit & Assurance",
+      "Business Advisory",
+    ],
+  },
+  {
+    title: "Tax",
+    description:
+      "Comprehensive tax services including income tax, VAT, compliance reviews, tax planning, transfer pricing, and support on audits.",
     image: "/tax.jpg",
-  },
-  {
-    title: "Financial Consulting",
-    description:
-      "Expert financial advice tailored to your business goals and growth plans.",
-    image: "/services4.jpg",
-  },
-  {
-    title: "Business Solutions",
-    description:
-      "Custom solutions for business growth, budgeting, and operational efficiency.",
-    image: "/services3.jpg",
+    related: [
+      "Accounting & Bookkeeping",
+      "Financial Reporting",
+      "Business Advisory",
+    ],
   },
 ];
 
@@ -70,7 +81,7 @@ export default function FancyServicesV2() {
                 isLeft ? "" : "lg:flex-row-reverse"
               }`}
             >
-              {/* Image with depth */}
+              {/* Image */}
               <div className="relative lg:w-1/2 w-full h-72 lg:h-96 rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform z-10">
                 <Image
                   src={service.image}
@@ -89,9 +100,28 @@ export default function FancyServicesV2() {
                 <button className="mt-6 px-6 py-3 rounded-lg bg-[#B71C1C] text-white font-semibold shadow-lg hover:bg-red-800 transition">
                   Learn More
                 </button>
+
+                {/* Related Services */}
+                {service.related && service.related.length > 0 && (
+                  <div className="mt-6">
+                    <h4 className="text-lg font-semibold text-[#B71C1C] mb-3">
+                      Related Services
+                    </h4>
+                    <div className="flex flex-wrap gap-3">
+                      {service.related.map((rel, idx) => (
+                        <span
+                          key={idx}
+                          className="px-3 py-1 bg-[#B71C1C]/10 text-[#B71C1C] rounded-full text-sm font-medium"
+                        >
+                          {rel}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
-              {/* Optional rotated decorative shape */}
+              {/* Decorative shape */}
               <div
                 className={`absolute -top-8 ${
                   isLeft ? "-left-8" : "-right-8"

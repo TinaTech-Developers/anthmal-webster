@@ -51,7 +51,7 @@ export default function WhoWeAreTimeline() {
           </h1>
         </div>
 
-        <p className="mt-6 text-gray-700 text-base sm:text-lg leading-relaxed w-full">
+        <p className="paragraph mt-6 text-gray-700 text-base sm:text-lg leading-relaxed w-full">
           <span className="font-semibold text-[#B71C1C]">Anthmal Webster</span>,
           has a rich history dating back to November 2019, founded on a shared
           vision by its five partners to establish a global network of

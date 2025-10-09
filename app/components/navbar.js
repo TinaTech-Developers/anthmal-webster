@@ -13,6 +13,7 @@ const navLinks = [
   { name: "About Us", href: "/about-us" },
   { name: "Services", href: "/services" },
   { name: "Contact Us", href: "/contact" },
+  { name: "Newsletter", href: "/newsletter" },
 ];
 
 export default function Navbar() {
@@ -68,7 +69,7 @@ export default function Navbar() {
 
             {/* LinkedIn */}
             <motion.a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/anthmal-webstercaz/"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-4 text-[#B71C1C] hover:text-red-800 transition"

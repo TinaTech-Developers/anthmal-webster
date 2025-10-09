@@ -5,13 +5,13 @@ import OurApproach from "./components/ourapproach";
 import PromotionBanner from "./components/promotionbanner";
 import Services from "./components/services";
 import Testimonials from "./components/testimonials";
+import WebLayout from "./components/WebLayout";
 import WhoWeAre from "./components/whoarewe";
 import WhyChooseUs from "./components/whychooseus";
 
 export default function Home() {
   return (
-    <>
-   
+    <WebLayout>
       <Hero />
       <WhoWeAre />
       <PromotionBanner />
@@ -20,6 +20,6 @@ export default function Home() {
       <WhyChooseUs />
       <Testimonials />
       <ContactBanner />
-    </>
+    </WebLayout>
   );
 }
