@@ -8,8 +8,9 @@ import DashboardLayout from "../components/DashboardLayout";
 import { useAuth } from "@/hooks/useAuth";
 
 export default function DashboardHome() {
+  const { isAuthenticated, loading: authLoading } = useAuth();
+
   const router = useRouter();
-  const { user, loading: authLoading } = useAuth(); // always at top
 
   const [newsletters, setNewsletters] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -86,8 +87,8 @@ export default function DashboardHome() {
     <DashboardLayout>
       {authLoading ? (
         <p>Checking authentication...</p>
-      ) : !user ? (
-        <p>You must be logged in to view this page.</p>
+      ) : !isAuthenticated ? (
+        <p>Redirecting to login...</p>
       ) : (
         <div className="w-full space-y-8 bg-gray-50 p-6">
           {/* Header */}

@@ -5,18 +5,20 @@ import { useRouter } from "next/navigation";
 
 export function useAuth() {
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    const session = localStorage.getItem("user");
-    if (!session) {
-      router.push("/admin");
+    const token = localStorage.getItem("adminToken");
+
+    if (!token) {
+      router.replace("/admin"); // redirect to login if not logged in
     } else {
-      setUser(JSON.parse(session));
+      setIsAuthenticated(true);
     }
+
     setLoading(false);
   }, [router]);
 
-  return { user, loading };
+  return { isAuthenticated, loading };
 }

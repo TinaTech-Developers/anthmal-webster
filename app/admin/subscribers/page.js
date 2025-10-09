@@ -15,12 +15,12 @@ import DashboardLayout from "../components/DashboardLayout";
 import { useAuth } from "@/hooks/useAuth";
 
 export default function SubscribersPage() {
+  const { isAuthenticated, loading: authLoading } = useAuth();
   const [subscribers, setSubscribers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [viewModal, setViewModal] = useState(null);
   const [deleteModal, setDeleteModal] = useState(null);
-  const { user, loading: authLoading } = useAuth();
   const rowsPerPage = 10;
 
   // Fetch subscribers from backend
@@ -67,8 +67,8 @@ export default function SubscribersPage() {
     <DashboardLayout>
       {authLoading ? (
         <p>Checking authentication...</p>
-      ) : !user ? (
-        <p>You must be logged in to view this page.</p>
+      ) : !isAuthenticated ? (
+        <p>Redirecting to login...</p>
       ) : (
         <section className="p-6 md:p-10 bg-gray-50 min-h-screen">
           {/* Header */}

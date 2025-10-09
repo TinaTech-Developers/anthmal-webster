@@ -10,8 +10,8 @@ import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
 
 export default function SettingsPage() {
+  const { isAuthenticated, loading: authLoading } = useAuth();
   const [users, setUsers] = useState([]);
-  const { user, loading: authLoading } = useAuth();
   const router = useRouter();
   const [form, setForm] = useState({
     name: "",
@@ -48,6 +48,12 @@ export default function SettingsPage() {
     fetchUsers();
   }, []);
 
+  useEffect(() => {
+    const token = localStorage.getItem("adminToken");
+    if (!token) {
+      router.replace("/admin");
+    }
+  }, [router]);
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -134,8 +140,8 @@ export default function SettingsPage() {
       <ToastContainer position="top-right" />
       {authLoading ? (
         <p>Checking authentication...</p>
-      ) : !user ? (
-        <p>You must be logged in to view this page.</p>
+      ) : !isAuthenticated ? (
+        <p>Redirecting to login...</p>
       ) : (
         <motion.div
           initial={{ opacity: 0, y: 15 }}

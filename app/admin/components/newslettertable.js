@@ -252,7 +252,7 @@ export default function NewsletterTable() {
                 <button
                   type="button"
                   onClick={() => setEditModal(null)}
-                  className="px-4 py-2 rounded-lg border bg-[#B71C1C] border-[#B71C1C] hover:bg-[#A01919]"
+                  className="px-4 text-white py-2 rounded-lg border bg-[#B71C1C] border-[#B71C1C] hover:bg-[#A01919]"
                 >
                   Cancel
                 </button>

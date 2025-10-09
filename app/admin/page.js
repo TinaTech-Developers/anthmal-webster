@@ -25,9 +25,12 @@ export default function AdminLogin() {
       const data = await res.json();
 
       if (res.ok && data.token) {
-        localStorage.setItem("adminToken", data.token);
+        // ✅ store the user session (so useAuth can read it)
+        const userSession = { token: data.token, email: form.email };
+        localStorage.setItem("user", JSON.stringify(userSession));
+
         toast.success("Login successful!", { autoClose: 1500 });
-        setTimeout(() => router.replace("/admin/settings"), 1500);
+        setTimeout(() => router.replace("/admin/dashboard"), 1500);
       } else {
         toast.error(data.error || "Invalid credentials", { autoClose: 3000 });
       }

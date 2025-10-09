@@ -9,9 +9,10 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
 
 export default function NewsletterDashboard() {
+  const { isAuthenticated, loading: authLoading } = useAuth();
   const [newsletters, setNewsletters] = useState([]);
   const router = useRouter();
-  const { user, loading: authLoading } = useAuth();
+
   const addNewsletter = (newEntry) => {
     setNewsletters([newEntry, ...newsletters]);
   };
@@ -24,8 +25,8 @@ export default function NewsletterDashboard() {
     <DashboardLayout>
       {authLoading ? (
         <p>Checking authentication...</p>
-      ) : !user ? (
-        <p>You must be logged in to view this page.</p>
+      ) : !isAuthenticated ? (
+        <p>Redirecting to login...</p>
       ) : (
         <main className="min-h-screen bg-gray-50 px-6 pb-12">
           {/* Header */}
