@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Trash2, Edit2, Eye } from "lucide-react";
+import Image from "next/image";
 
 export default function NewsletterTable() {
   const [data, setData] = useState([]);
@@ -173,7 +174,9 @@ export default function NewsletterTable() {
               <strong>Content:</strong> {viewModal.content}
             </p>
             {viewModal.image && (
-              <img
+              <Image
+                height={300}
+                width={500}
                 src={viewModal.image}
                 alt={viewModal.title}
                 className="mt-4 rounded-lg max-h-64 object-cover w-full"

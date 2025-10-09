@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   FaFacebookF,
   FaTwitter,
@@ -23,19 +24,44 @@ export default function Footer() {
             help your business thrive.
           </p>
           <div className="flex space-x-4 mt-2">
-            <a href="#" className="hover:text-[#B71C1C] transition">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#B71C1C] transition"
+            >
               <FaFacebookF />
             </a>
-            <a href="#" className="hover:text-[#B71C1C] transition">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#B71C1C] transition"
+            >
               <FaTwitter />
             </a>
-            <a href="#" className="hover:text-[#B71C1C] transition">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#B71C1C] transition"
+            >
               <FaLinkedinIn />
             </a>
-            <a href="#" className="hover:text-[#B71C1C] transition">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#B71C1C] transition"
+            >
               <FaInstagram />
             </a>
-            <a href="#" className="hover:text-[#B71C1C] transition">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#B71C1C] transition"
+            >
               <FaYoutube />
             </a>
           </div>
@@ -46,29 +72,38 @@ export default function Footer() {
           <h3 className="text-xl font-semibold text-[#B71C1C]">Quick Links</h3>
           <ul className="space-y-2 text-gray-300">
             <li>
-              <a href="/" className="hover:text-[#B71C1C] transition">
+              <Link href="/" className="hover:text-[#B71C1C] transition">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="services" className="hover:text-[#B71C1C] transition">
+              <Link
+                href="/services"
+                className="hover:text-[#B71C1C] transition"
+              >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="about-us" className="hover:text-[#B71C1C] transition">
+              <Link
+                href="/about-us"
+                className="hover:text-[#B71C1C] transition"
+              >
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="newsletter" className="hover:text-[#B71C1C] transition">
+              <Link
+                href="/newsletter"
+                className="hover:text-[#B71C1C] transition"
+              >
                 Newsletter
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-[#B71C1C] transition">
+              <Link href="/contact" className="hover:text-[#B71C1C] transition">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -78,24 +113,36 @@ export default function Footer() {
           <h3 className="text-xl font-semibold text-[#B71C1C]">Services</h3>
           <ul className="space-y-2 text-gray-300">
             <li>
-              <a href="/services" className="hover:text-[#B71C1C] transition">
+              <Link
+                href="/services"
+                className="hover:text-[#B71C1C] transition"
+              >
                 Accounting
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services" className="hover:text-[#B71C1C] transition">
+              <Link
+                href="/services"
+                className="hover:text-[#B71C1C] transition"
+              >
                 Tax Planning
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services" className="hover:text-[#B71C1C] transition">
+              <Link
+                href="/services"
+                className="hover:text-[#B71C1C] transition"
+              >
                 Financial Consulting
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services" className="hover:text-[#B71C1C] transition">
+              <Link
+                href="/services"
+                className="hover:text-[#B71C1C] transition"
+              >
                 Business Solutions
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
