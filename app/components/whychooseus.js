@@ -77,15 +77,15 @@ export default function WhyChooseUs() {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="flex-1 flex justify-center relative px-4 lg:px-0"
+          className="flex-1 flex justify-center relative"
         >
           {/* Background gradient frame */}
           <div className="absolute inset-0 flex justify-center items-center">
-            <div className="bg-gradient-to-b from-[#B71C1C] to-white w-[420px] md:w-[500px] h-[460px] md:h-[670px] rounded-[40px] rounded-tl-[120px] shadow-inner" />
+            <div className="bg-gradient-to-b from-[#B71C1C] to-white w-80 md:w-[500px] h-[460px] md:h-[670px] rounded-[40px] rounded-tl-[120px] shadow-inner" />
           </div>
 
           {/* Foreground white card with image */}
-          <div className="relative z-10 w-full md:w-[480px] h-full md:h-[640px] overflow-hidden rounded-[40px] rounded-tl-[120px] bg-white shadow-xl border border-[#B71C1C]/20">
+          <div className="relative z-10 w-80 md:w-[480px] h-[420px] md:h-[640px] overflow-hidden rounded-[40px] rounded-tl-[120px] bg-white shadow-xl border border-[#B71C1C]/20">
             <Image
               src="/whychooseus.jpg" // replace with your image path
               alt="Anthmal Webster team"
