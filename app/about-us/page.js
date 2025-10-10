@@ -28,8 +28,10 @@ export default function AboutUsPage() {
               className="text-center mb-16 relative z-10"
             >
               <div className="text-center">
-                <h2 className="text-4xl sm:text-sm font-extrabold text-[#B71C1C] tracking-tight relative inline-block">
-                  <span className="relative z-10 uppercase">about us</span>
+                <h2 className=" sm:text-sm font-extrabold text-[#B71C1C] tracking-tight relative inline-block">
+                  <span className="relative z-10 uppercase text-sm">
+                    about us
+                  </span>
                 </h2>
                 <h1 className="capitalize text-2xl md:text-3xl text-black font-bold mt-2">
                   Who Are We
